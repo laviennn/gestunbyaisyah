@@ -1,6 +1,8 @@
 ---
 import { navigation } from '../../config/navigation';
 import { siteContent } from '../../config/siteContent';
+import { Image } from 'astro:assets';
+import logoImg from '../../assets/logo.png';
 
 const waMsg = encodeURIComponent(siteContent.contact.defaultMessage);
 const waLink = `${siteContent.contact.whatsappLink}${siteContent.contact.phone}?text=${waMsg}`;
@@ -14,10 +16,11 @@ const waLink = `${siteContent.contact.whatsappLink}${siteContent.contact.phone}?
       href='#'
       aria-label='Home'
       class='flex items-center gap-2'>
-      <img
-        src='/assets/logo.png'
+      <Image
+        src={logoImg}
         alt='GestunByAisyah Logo'
         class='h-12 w-auto object-contain'
+        loading='eager'
       />
     </a>
 

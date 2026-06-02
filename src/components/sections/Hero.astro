@@ -1,6 +1,12 @@
 ---
 import { siteContent } from '../../config/siteContent';
 import { Image } from 'astro:assets';
+import logoImg from '../../assets/logo.png';
+import spaylaterImg from '../../assets/spaylater.webp';
+import kredivoImg from '../../assets/kredivo.webp';
+import indodanaImg from '../../assets/indodana.webp';
+import gopayImg from '../../assets/gopay.webp';
+import blibliImg from '../../assets/blibli paylater.webp';
 
 const waMsg = encodeURIComponent(siteContent.contact.defaultMessage);
 const waLink = `${siteContent.contact.whatsappLink}${siteContent.contact.phone}?text=${waMsg}`;
@@ -196,11 +202,10 @@ const badges = [
       <div
         class='absolute top-[15%] left-[35%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
         <Image
-          src='/assets/spaylater.webp'
+          src={spaylaterImg}
           alt='SPayLater'
           width={90}
           height={30}
-          format='webp'
           loading='eager'
           class='h-6 w-auto object-contain'
         />
@@ -209,11 +214,10 @@ const badges = [
       <div
         class='absolute top-[25%] left-[80%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
         <Image
-          src='/assets/kredivo.webp'
+          src={kredivoImg}
           alt='Kredivo'
           width={90}
           height={30}
-          format='webp'
           loading='eager'
           class='h-6 w-auto object-contain'
         />
@@ -222,11 +226,10 @@ const badges = [
       <div
         class='absolute top-[45%] left-[15%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
         <Image
-          src='/assets/indodana.webp'
+          src={indodanaImg}
           alt='Indodana'
           width={90}
           height={30}
-          format='webp'
           loading='eager'
           class='h-6 w-auto object-contain'
         />
@@ -235,11 +238,10 @@ const badges = [
       <div
         class='absolute top-[60%] left-[85%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
         <Image
-          src='/assets/gopay.webp'
+          src={gopayImg}
           alt='Gopaylater'
           width={90}
           height={30}
-          format='webp'
           loading='eager'
           class='h-6 w-auto object-contain'
         />
@@ -248,11 +250,10 @@ const badges = [
       <div
         class='absolute top-[78%] left-[35%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
         <Image
-          src='/assets/blibli paylater.webp'
+          src={blibliImg}
           alt='Blibli Tiket Paylater'
           width={90}
           height={30}
-          format='webp'
           loading='eager'
           class='h-6 w-auto object-contain'
         />
@@ -290,10 +291,11 @@ const badges = [
         class='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30'>
         <div
           class='w-40 h-40 md:w-48 md:h-48 rounded-full bg-white border-[6px] border-white shadow-[0_15px_40px_rgba(2,43,84,0.15)] overflow-hidden flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300'>
-          <img
-            src='/assets/logo.png'
+          <Image
+            src={logoImg}
             alt='GestunByAisyah Logo'
             class='w-full h-full object-contain rounded-full'
+            loading='eager'
           />
         </div>
       </div>

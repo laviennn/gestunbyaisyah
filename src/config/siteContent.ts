@@ -1,3 +1,9 @@
+import testimonial1 from '../assets/1.webp';
+import testimonial2 from '../assets/2.webp';
+import testimonial3 from '../assets/3.webp';
+import testimonial4 from '../assets/4.webp';
+import testimonial5 from '../assets/5.webp';
+
 export const siteContent = {
   seo: {
     title: 'GestunByAisyah | Jasa Gestun Paylater & Kartu Kredit Terpercaya',
@@ -150,12 +156,11 @@ export const siteContent = {
     subtitle: 'BUKTI TRANSAKSI',
     title: 'Apa Kata Mereka?',
     images: [
-      // Add paths to actual portrait aspect ratio images in /public/assets/testimonials/
-      '/assets/1.webp',
-      '/assets/2.webp',
-      '/assets/3.webp',
-      '/assets/4.webp',
-      '/assets/5.webp',
+      testimonial1,
+      testimonial2,
+      testimonial3,
+      testimonial4,
+      testimonial5,
     ],
   },
 };

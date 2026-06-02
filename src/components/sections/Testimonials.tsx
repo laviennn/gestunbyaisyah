@@ -24,22 +24,25 @@ export default function Testimonials() {
 
         {/* CSS Scroll Snap Slider */}
         <div className='flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar'>
-          {siteContent.testimonials.images.map((src, idx) => (
-            <div
-              key={idx}
-              className='snap-center shrink-0 w-64 md:w-72 cursor-pointer transition-transform hover:scale-105'
-              onClick={() => openLightbox(src)}>
-              <div className='bg-white rounded-2xl shadow-xl overflow-hidden aspect-[3/4] relative border-4 border-white'>
-                <img
-                  src={src}
-                  alt={`Testimonial ${idx + 1}`}
-                  loading='lazy'
-                  className='w-full h-full object-cover'
-                />
-                <div className='absolute inset-0 bg-black/10 hover:bg-black/0 transition-colors'></div>
+          {siteContent.testimonials.images.map((img: any, idx) => {
+            const imgSrc = typeof img === 'string' ? img : img.src;
+            return (
+              <div
+                key={idx}
+                className='snap-center shrink-0 w-64 md:w-72 cursor-pointer transition-transform hover:scale-105'
+                onClick={() => openLightbox(imgSrc)}>
+                <div className='bg-white rounded-2xl shadow-xl overflow-hidden aspect-[3/4] relative border-4 border-white'>
+                  <img
+                    src={imgSrc}
+                    alt={`Testimonial ${idx + 1}`}
+                    loading='lazy'
+                    className='w-full h-full object-cover'
+                  />
+                  <div className='absolute inset-0 bg-black/10 hover:bg-black/0 transition-colors'></div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

@@ -4,15 +4,20 @@ import { Image } from 'astro:assets';
 import SectionTitle from '../ui/SectionTitle.astro';
 import Button from '../ui/Button.astro';
 
-// Mapping nama file logo sesuai dengan urutan platform di siteContent.ts
-// Pastikan Anda menaruh file gambar dengan nama ini di folder public/assets/logos/
-const logoFiles = [
-  'spaylater.webp',
-  'kredivo.webp',
-  'gopay.webp',
-  'blibli paylater.webp',
-  'indodana.webp',
-  'cc.webp', // Logo untuk Kartu Kredit (bisa gabungan logo Visa/Mastercard)
+import spaylaterImg from '../../assets/spaylater.webp';
+import kredivoImg from '../../assets/kredivo.webp';
+import gopayImg from '../../assets/gopay.webp';
+import blibliImg from '../../assets/blibli paylater.webp';
+import indodanaImg from '../../assets/indodana.webp';
+import ccImg from '../../assets/cc.webp';
+
+const platformLogos = [
+  spaylaterImg,
+  kredivoImg,
+  gopayImg,
+  blibliImg,
+  indodanaImg,
+  ccImg,
 ];
 ---
 
@@ -84,12 +89,12 @@ const logoFiles = [
           <article class='bg-white p-8 rounded-[20px] border border-gray-100 shadow-[0_2px_15px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col text-left'>
             <div class='h-10 mb-6 flex items-center justify-start'>
               <Image
-                src={`/assets/${logoFiles[index]}`}
+                src={platformLogos[index]}
                 alt={`Logo ${platform.name}`}
                 width={120}
                 height={40}
-                format='webp'
                 class='max-h-full w-auto object-contain'
+                loading='lazy'
               />
             </div>
 
