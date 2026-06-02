@@ -1,0 +1,149 @@
+---
+import { navigation } from '../../config/navigation';
+import { siteContent } from '../../config/siteContent';
+
+const waMsg = encodeURIComponent(siteContent.contact.defaultMessage);
+const waLink = `${siteContent.contact.whatsappLink}${siteContent.contact.phone}?text=${waMsg}`;
+---
+
+<header
+  class='fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300'>
+  <div
+    class='max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative z-50 bg-transparent'>
+    <a
+      href='#'
+      aria-label='Home'
+      class='flex items-center gap-2'>
+      <img
+        src='/assets/logo.png'
+        alt='GestunByAisyah Logo'
+        class='h-12 w-auto object-contain'
+      />
+    </a>
+
+    <nav class='hidden md:flex items-center gap-8'>
+      {
+        navigation.map((item) => (
+          <a
+            href={item.href}
+            class='text-sm font-semibold text-muted hover:text-primary transition-colors'>
+            {item.name}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class='hidden md:block'>
+      <a
+        href={waLink}
+        aria-label='WhatsApp Admin'
+        class='bg-[#10B981] text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-md shadow-green-500/20 hover:bg-[#059669] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300'>
+        Hubungi Admin
+      </a>
+    </div>
+
+    <button
+      id='mobile-menu-btn'
+      aria-label='Toggle Menu'
+      aria-expanded='false'
+      class='md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none group'>
+      <span
+        class='line-1 w-6 h-[2.5px] bg-tertiary rounded-full transition-all duration-300 origin-center'
+      ></span>
+      <span
+        class='line-2 w-6 h-[2.5px] bg-tertiary rounded-full transition-all duration-200'
+      ></span>
+      <span
+        class='line-3 w-6 h-[2.5px] bg-tertiary rounded-full transition-all duration-300 origin-center'
+      ></span>
+    </button>
+  </div>
+
+  <div
+    id='mobile-menu'
+    class='absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-xl overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] max-h-0 opacity-0 invisible md:hidden'>
+    <div class='px-6 py-6 flex flex-col gap-4'>
+      {
+        navigation.map((item) => (
+          <a
+            href={item.href}
+            class='mobile-link text-lg font-semibold text-tertiary hover:text-primary transition-colors py-2 border-b border-gray-50 last:border-none'>
+            {item.name}
+          </a>
+        ))
+      }
+      <a
+        href={waLink}
+        class='mt-4 w-full text-center bg-[#10B981] text-white px-5 py-3.5 rounded-xl font-bold shadow-md shadow-green-500/20 hover:bg-[#059669] transition-colors'>
+        Hubungi Admin
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Kapsulasi dalam fungsi agar mendukung Astro ViewTransitions (jika digunakan nantinya)
+  const setupHeader = () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Pastikan elemen ada sebelum menjalankan script
+    if (!btn || !menu) return;
+
+    let isMenuOpen = false;
+
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
+
+      // Update aria attribute untuk accessibility
+      btn.setAttribute('aria-expanded', isMenuOpen.toString());
+
+      if (isMenuOpen) {
+        // Buka Menu
+        menu.classList.remove('max-h-0', 'opacity-0', 'invisible');
+        menu.classList.add('max-h-[500px]', 'opacity-100', 'visible');
+
+        // Animasi Hamburger menjadi 'X'
+        btn
+          .querySelector('.line-1')
+          ?.classList.add('translate-y-[8.5px]', 'rotate-45');
+        btn.querySelector('.line-2')?.classList.add('opacity-0', 'scale-x-0');
+        btn
+          .querySelector('.line-3')
+          ?.classList.add('-translate-y-[8.5px]', '-rotate-45');
+      } else {
+        // Tutup Menu
+        menu.classList.remove('max-h-[500px]', 'opacity-100', 'visible');
+        menu.classList.add('max-h-0', 'opacity-0', 'invisible');
+
+        // Kembalikan 'X' menjadi Hamburger
+        btn
+          .querySelector('.line-1')
+          ?.classList.remove('translate-y-[8.5px]', 'rotate-45');
+        btn
+          .querySelector('.line-2')
+          ?.classList.remove('opacity-0', 'scale-x-0');
+        btn
+          .querySelector('.line-3')
+          ?.classList.remove('-translate-y-[8.5px]', '-rotate-45');
+      }
+    };
+
+    // Event listener untuk tombol hamburger
+    btn.addEventListener('click', toggleMenu);
+
+    // Event listener agar menu menutup otomatis saat link di-klik
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) toggleMenu();
+      });
+    });
+  };
+
+  // Eksekusi script saat DOM siap
+  document.addEventListener('DOMContentLoaded', setupHeader);
+
+  // Jika menggunakan Astro View Transitions, gunakan event ini juga:
+  // document.addEventListener('astro:page-load', setupHeader);
+</script>

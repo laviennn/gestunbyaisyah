@@ -1,0 +1,114 @@
+---
+import { siteContent } from '../../config/siteContent';
+import { navigation } from '../../config/navigation';
+---
+
+<footer class='bg-tertiary text-white pt-16 pb-8 border-t border-gray-800'>
+  <div class='max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12'>
+    <div class='flex flex-col gap-4'>
+      <img
+        src='/assets/logo.png'
+        alt='GestunByAisyah Logo'
+        class='h-16 w-auto object-contain'
+      />
+      <p class='text-gray-400 text-sm leading-relaxed'>
+        {siteContent.seo.description}
+      </p>
+      <div class='flex gap-4 mt-2'>
+        <a
+          href='#lokasi'
+          aria-label='Maps'
+          class='p-2 bg-gray-800 rounded-lg hover:bg-primary transition-colors'>
+          <svg
+            class='w-5 h-5 text-white'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+            ><path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z'
+            ></path><path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M15 11a3 3 0 11-6 0 3 3 0 016 0z'
+            ></path></svg
+          >
+        </a>
+        <a
+          href={`https://wa.me/${siteContent.contact.phone}`}
+          aria-label='WhatsApp'
+          class='p-2 bg-gray-800 rounded-lg hover:bg-accent transition-colors'>
+          <svg
+            class='w-5 h-5 text-white'
+            fill='currentColor'
+            viewBox='0 0 24 24'
+            ><path
+              d='M12.031 0C5.385 0 0 5.385 0 12.031c0 2.115.551 4.176 1.597 5.986L.048 24l6.155-1.547c1.748.966 3.738 1.474 5.828 1.474 6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 21.979c-1.802 0-3.565-.483-5.111-1.399l-.367-.217-3.805.955.972-3.712-.238-.379C2.519 15.656 2 13.882 2 12.031 2 6.49 6.49 2 12.031 2s10.031 4.49 10.031 10.031-4.49 10.031-10.031 10.031zm5.513-7.514c-.302-.151-1.787-.882-2.064-.984-.278-.102-.481-.151-.683.151-.202.302-.782.984-.959 1.185-.177.202-.354.227-.656.076-.302-.151-1.275-.47-2.428-1.5-8.97-8.97-1.127-1.246-1.428-1.548-.302-.302.261-.258.558-.847.098-.198.049-.371-.026-.523-.076-.151-.683-1.649-.936-2.257-.246-.593-.496-.513-.683-.522-.177-.009-.379-.009-.581-.009-.202 0-.53.076-.807.379-.278.302-1.06 1.037-1.06 2.529s1.085 2.936 1.236 3.138c.151.202 2.14 3.266 5.184 4.58.723.313 1.288.5 1.728.641.725.23 1.385.197 1.905.12.58-.084 1.787-.73 2.039-1.436.252-.705.252-1.31.177-1.436-.076-.126-.278-.202-.581-.353z'
+            ></path></svg
+          >
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class='text-lg font-bold mb-4 text-white'>Pintasan Menu</h3>
+      <ul class='flex flex-col gap-2'>
+        {
+          navigation.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class='text-gray-400 text-sm hover:text-primary transition-colors'>
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h3 class='text-lg font-bold mb-4 text-white'>Waktu Layanan</h3>
+      <ul class='flex flex-col gap-2 text-sm text-gray-400'>
+        <li class='flex justify-between border-b border-gray-700 pb-2'>
+          <span>Senin - Jumat:</span>
+          <span class='font-semibold text-white'>08:00 - 22:00</span>
+        </li>
+        <li class='flex justify-between border-b border-gray-700 pb-2'>
+          <span>Sabtu - Minggu:</span>
+          <span class='font-semibold text-white'>09:00 - 21:00</span>
+        </li>
+        <li class='flex justify-between pt-2'>
+          <span>Layanan Online:</span>
+          <span class='text-accent font-bold'>24 Jam (Sistem)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div
+    class='max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4'>
+    <p class='text-gray-500 text-sm'>
+      © {new Date().getFullYear()} GestunByAisyah. All rights reserved.
+    </p>
+    <div
+      class='flex items-center gap-2 text-sm font-bold text-accent bg-accent/10 px-4 py-2 rounded-full'>
+      <svg
+        class='w-4 h-4'
+        fill='none'
+        stroke='currentColor'
+        viewBox='0 0 24 24'
+        ><path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          stroke-width='2'
+          d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+        ></path></svg
+      >
+      100% Aman dan Terpercaya
+    </div>
+  </div>
+</footer>

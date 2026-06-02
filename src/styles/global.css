@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  
+  --color-primary: #F27A18;      /* Brand Orange */
+  --color-secondary: #FFF4E5;    /* Cream Orange */
+  --color-tertiary: #022B54;     /* Deep Navy Blue */
+  --color-accent: #10B981;       /* WhatsApp Green */
+  --color-text: #0C1A30;         /* Navy Slate */
+  --color-muted: #4E5F73;        /* Slate Gray */
+  --color-background: #F5F8FA;   /* Light Blue-Gray */
+  --color-card: #FFFFFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Utilities for glassmorphism */
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}

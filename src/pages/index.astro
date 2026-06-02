@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+import Hero from '../components/sections/Hero.astro';
+import MengapaMemilih from '../components/sections/MengapaMemilih.astro';
+import Layanan from '../components/sections/Layanan.astro';
+import LangkahMudah from '../components/sections/LangkahMudah.astro';
+import TentangKami from '../components/sections/TentangKami.astro';
+import Testimonials from '../components/sections/Testimonials'; // React Client Island
+import Lokasi from '../components/sections/Lokasi.astro';
+import Disclaimer from '../components/sections/Disclaimer.astro';
+---
+
+<Layout>
+  <Header />
+
+  <main>
+    <!-- Sections in requested order -->
+    <Hero />
+    <MengapaMemilih />
+    <Layanan />
+    <Disclaimer />
+    <LangkahMudah />
+    <TentangKami />
+
+    <!-- React Component with client:load for interactive lightbox and slider -->
+    <Testimonials client:load />
+  </main>
+
+  <Footer />
+</Layout>
