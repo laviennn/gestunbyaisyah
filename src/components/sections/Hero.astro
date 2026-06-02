@@ -1,55 +1,60 @@
 ---
-import { siteContent } from '../../config/siteContent';
-import { Image } from 'astro:assets';
-import logoImg from '../../assets/logo.png';
-import spaylaterImg from '../../assets/spaylater.webp';
-import kredivoImg from '../../assets/kredivo.webp';
-import indodanaImg from '../../assets/indodana.webp';
-import gopayImg from '../../assets/gopay.webp';
-import blibliImg from '../../assets/blibli paylater.webp';
+import { siteContent } from "../../config/siteContent";
+import { Image } from "astro:assets";
+import logoImg from "../../assets/logo.png";
+import spaylaterImg from "../../assets/spaylater.webp";
+import kredivoImg from "../../assets/kredivo.webp";
+import yupImg from "../../assets/yup.webp";
+import indodanaImg from "../../assets/indodana.webp";
+import gopayImg from "../../assets/gopay.webp";
+import blibliImg from "../../assets/blibli paylater.webp";
 
 const waMsg = encodeURIComponent(siteContent.contact.defaultMessage);
 const waLink = `${siteContent.contact.whatsappLink}${siteContent.contact.phone}?text=${waMsg}`;
 
 const badges = [
   {
-    text: 'Aman',
-    color: 'bg-accent text-white',
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    text: "Aman",
+    color: "bg-accent text-white",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
   },
   {
-    text: 'Cepat',
-    color: 'bg-primary text-white',
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+    text: "Cepat",
+    color: "bg-primary text-white",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
   },
   {
-    text: 'Transparan',
-    color: 'bg-tertiary text-white',
-    icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
+    text: "Transparan",
+    color: "bg-tertiary text-white",
+    icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z",
   },
 ];
 ---
 
 <section
-  id='home'
-  class='relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-background'>
+  id="home"
+  class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-background"
+>
   <div
-    class='max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center'>
-    <div class='flex flex-col gap-6 text-left z-10'>
-      <div class='flex flex-wrap gap-2.5'>
+    class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center"
+  >
+    <div class="flex flex-col gap-6 text-left z-10">
+      <div class="flex flex-wrap gap-2.5">
         {
           badges.map((badge) => (
             <span
-              class={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md font-bold text-[11px] uppercase tracking-wider ${badge.color}`}>
+              class={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md font-bold text-[11px] uppercase tracking-wider ${badge.color}`}
+            >
               <svg
-                class='w-3.5 h-3.5'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'>
+                class="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
-                  stroke-width='2'
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
                   d={badge.icon}
                 />
               </svg>
@@ -60,232 +65,258 @@ const badges = [
       </div>
 
       <h1
-        class='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-tertiary'>
+        class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-tertiary"
+      >
         Jasa Gestun Paylater & Kartu Kredit Terpercaya
       </h1>
 
-      <p class='text-base text-muted md:text-lg leading-relaxed max-w-lg'>
+      <p class="text-base text-muted md:text-lg leading-relaxed max-w-lg">
         Butuh dana cepat? Cairkan limit PayLater (SpayLater, Akulaku, Kredivo,
         Indodana) and Kartu Kredit Anda bersama GestunByAisyah. Proses cepat,
         mudah, dan privasi terjaga secara online maupun offline di Bandung.
       </p>
 
-      <div class='flex flex-wrap gap-4 mt-2'>
+      <div class="flex flex-wrap gap-4 mt-2">
         <a
           href={waLink}
-          aria-label='Mulai Konsultasi Gratis'
-          class='bg-tertiary text-white px-6 py-3.5 rounded-xl font-semibold shadow-lg shadow-tertiary/10 hover:shadow-primary/20 hover:-translate-y-0.5 transition-all flex items-center gap-2'>
-          <svg
-            class='w-8 h-8'
-            fill='currentColor'
-            viewBox='0 0 24 24'>
+          aria-label="Mulai Konsultasi Gratis"
+          class="bg-tertiary text-white px-6 py-3.5 rounded-xl font-semibold shadow-lg shadow-tertiary/10 hover:shadow-primary/20 hover:-translate-y-0.5 transition-all flex items-center gap-2"
+        >
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
             <path
-              d='M12.031 0C5.385 0 0 5.385 0 12.031c0 2.115.551 4.176 1.597 5.986L.048 24l6.155-1.547c1.748.966 3.738 1.474 5.828 1.474 6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 21.979c-1.802 0-3.565-.483-5.111-1.399l-.367-.217-3.805.955.972-3.712-.238-.379C2.519 15.656 2 13.882 2 12.031 2 6.49 6.49 2 12.031 2s10.031 4.49 10.031 10.031-4.49 10.031-10.031 10.031zm5.513-7.514c-.302-.151-1.787-.882-2.064-.984-.278-.102-.481-.151-.683.151-.202.302-.782.984-.959 1.185-.177.202-.354.227-.656.076-.302-.151-1.275-.47-2.428-1.5-8.97-8.97-1.127-1.246-1.428-1.548-.302-.302.261-.258.558-.847.098-.198.049-.371-.026-.523-.076-.151-.683-1.649-.936-2.257-.246-.593-.496-.513-.683-.522-.177-.009-.379-.009-.581-.009-.202 0-.53.076-.807.379-.278.302-1.06 1.037-1.06 2.529s1.085 2.936 1.236 3.138c.151.202 2.14 3.266 5.184 4.58.723.313 1.288.5 1.728.641.725.23 1.385.197 1.905.12.58-.084 1.787-.73 2.039-1.436.252-.705.252-1.31.177-1.436-.076-.126-.278-.202-.581-.353z'
+              d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.115.551 4.176 1.597 5.986L.048 24l6.155-1.547c1.748.966 3.738 1.474 5.828 1.474 6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 21.979c-1.802 0-3.565-.483-5.111-1.399l-.367-.217-3.805.955.972-3.712-.238-.379C2.519 15.656 2 13.882 2 12.031 2 6.49 6.49 2 12.031 2s10.031 4.49 10.031 10.031-4.49 10.031-10.031 10.031zm5.513-7.514c-.302-.151-1.787-.882-2.064-.984-.278-.102-.481-.151-.683.151-.202.302-.782.984-.959 1.185-.177.202-.354.227-.656.076-.302-.151-1.275-.47-2.428-1.5-8.97-8.97-1.127-1.246-1.428-1.548-.302-.302.261-.258.558-.847.098-.198.049-.371-.026-.523-.076-.151-.683-1.649-.936-2.257-.246-.593-.496-.513-.683-.522-.177-.009-.379-.009-.581-.009-.202 0-.53.076-.807.379-.278.302-1.06 1.037-1.06 2.529s1.085 2.936 1.236 3.138c.151.202 2.14 3.266 5.184 4.58.723.313 1.288.5 1.728.641.725.23 1.385.197 1.905.12.58-.084 1.787-.73 2.039-1.436.252-.705.252-1.31.177-1.436-.076-.126-.278-.202-.581-.353z"
             ></path>
           </svg>
           Mulai Konsultasi Gratis
         </a>
         <a
-          href='#cara-order'
-          aria-label='Lihat Cara Order'
-          class='bg-white border border-gray-200 text-tertiary px-6 py-3.5 rounded-xl font-semibold hover:border-primary/30 shadow-sm transition-all flex items-center gap-2'>
+          href="#cara-order"
+          aria-label="Lihat Cara Order"
+          class="bg-white border border-gray-200 text-tertiary px-6 py-3.5 rounded-xl font-semibold hover:border-primary/30 shadow-sm transition-all flex items-center gap-2"
+        >
           Lihat Cara Order
           <svg
-            class='w-4 h-4'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
             ><path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='2'
-              d='M14 5l7 7m0 0l-7 7m7-7H3'
-            ></path></svg
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
           >
         </a>
       </div>
 
-      <div class='mt-8'>
+      <div class="mt-8">
         <p
-          class='text-[11px] text-gray-500 font-bold uppercase tracking-widest mb-3'>
+          class="text-[11px] text-gray-500 font-bold uppercase tracking-widest mb-3"
+        >
           Mendukung Pencairan Dari:
         </p>
         <div
-          class='flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-bold text-gray-600'>
+          class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-bold text-gray-600"
+        >
           <span>Shopee PayLater</span>
-          <span class='w-1 h-1 bg-gray-300 rounded-full'></span>
+          <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
           <span>Akulaku</span>
-          <span class='w-1 h-1 bg-gray-300 rounded-full'></span>
+          <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
           <span>Kredivo</span>
-          <span class='w-1 h-1 bg-gray-300 rounded-full'></span>
+          <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
           <span>Indodana</span>
-          <span class='w-1 h-1 bg-gray-300 rounded-full'></span>
+          <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+          <span>Yup PayLater</span>
+          <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
           <span>Kartu Kredit</span>
         </div>
       </div>
     </div>
 
     <div
-      class='relative w-full aspect-square max-w-[500px] mx-auto mt-10 lg:mt-0 lg:scale-110'>
-      <div class='absolute inset-0 bg-secondary/40 rounded-full blur-[100px] -z-10'>
+      class="relative w-full aspect-square max-w-[500px] mx-auto mt-10 lg:mt-0 lg:scale-110"
+    >
+      <div
+        class="absolute inset-0 bg-secondary/40 rounded-full blur-[100px] -z-10"
+      >
       </div>
 
       <svg
-        class='absolute inset-0 w-full h-full pointer-events-none z-0'
-        viewBox='0 0 100 100'>
+        class="absolute inset-0 w-full h-full pointer-events-none z-0"
+        viewBox="0 0 100 100"
+      >
         <circle
-          cx='50'
-          cy='50'
-          r='28'
-          fill='none'
-          stroke='#e2e8f0'
-          stroke-width='0.3'
-          stroke-dasharray='1 1.5'
-        ></circle>
+          cx="50"
+          cy="50"
+          r="28"
+          fill="none"
+          stroke="#e2e8f0"
+          stroke-width="0.3"
+          stroke-dasharray="1 1.5"></circle>
         <circle
-          cx='50'
-          cy='50'
-          r='42'
-          fill='none'
-          stroke='#e2e8f0'
-          stroke-width='0.3'
-          stroke-dasharray='1 1.5'
-        ></circle>
+          cx="50"
+          cy="50"
+          r="42"
+          fill="none"
+          stroke="#e2e8f0"
+          stroke-width="0.3"
+          stroke-dasharray="1 1.5"></circle>
 
         <line
-          x1='50'
-          y1='50'
-          x2='35'
-          y2='15'
-          stroke='#cbd5e1'
-          stroke-width='0.4'
-          stroke-dasharray='1.5 1.5'
-        ></line>
+          x1="50"
+          y1="50"
+          x2="35"
+          y2="15"
+          stroke="#cbd5e1"
+          stroke-width="0.4"
+          stroke-dasharray="1.5 1.5"></line>
         <line
-          x1='50'
-          y1='50'
-          x2='80'
-          y2='25'
-          stroke='#cbd5e1'
-          stroke-width='0.4'
-          stroke-dasharray='1.5 1.5'
-        ></line>
+          x1="50"
+          y1="50"
+          x2="80"
+          y2="25"
+          stroke="#cbd5e1"
+          stroke-width="0.4"
+          stroke-dasharray="1.5 1.5"></line>
         <line
-          x1='50'
-          y1='50'
-          x2='15'
-          y2='45'
-          stroke='#cbd5e1'
-          stroke-width='0.4'
-          stroke-dasharray='1.5 1.5'
-        ></line>
+          x1="50"
+          y1="50"
+          x2="88"
+          y2="42"
+          stroke="#cbd5e1"
+          stroke-width="0.4"
+          stroke-dasharray="1.5 1.5"></line>
         <line
-          x1='50'
-          y1='50'
-          x2='85'
-          y2='60'
-          stroke='#cbd5e1'
-          stroke-width='0.4'
-          stroke-dasharray='1.5 1.5'
-        ></line>
+          x1="50"
+          y1="50"
+          x2="15"
+          y2="45"
+          stroke="#cbd5e1"
+          stroke-width="0.4"
+          stroke-dasharray="1.5 1.5"></line>
         <line
-          x1='50'
-          y1='50'
-          x2='35'
-          y2='78'
-          stroke='#cbd5e1'
-          stroke-width='0.4'
-          stroke-dasharray='1.5 1.5'
-        ></line>
+          x1="50"
+          y1="50"
+          x2="85"
+          y2="60"
+          stroke="#cbd5e1"
+          stroke-width="0.4"
+          stroke-dasharray="1.5 1.5"></line>
+        <line
+          x1="50"
+          y1="50"
+          x2="35"
+          y2="78"
+          stroke="#cbd5e1"
+          stroke-width="0.4"
+          stroke-dasharray="1.5 1.5"></line>
       </svg>
 
       <div
-        class='absolute top-[15%] left-[35%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
+        class="absolute top-[15%] left-[35%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300"
+      >
         <Image
           src={spaylaterImg}
-          alt='SPayLater'
-          loading='eager'
-          class='h-6 w-auto object-contain'
+          alt="SPayLater"
+          loading="eager"
+          class="h-6 w-auto object-contain"
         />
       </div>
 
       <div
-        class='absolute top-[25%] left-[80%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
+        class="absolute top-[25%] left-[80%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300"
+      >
         <Image
           src={kredivoImg}
-          alt='Kredivo'
-          loading='eager'
-          class='h-6 w-auto object-contain'
+          alt="Kredivo"
+          loading="eager"
+          class="h-6 w-auto object-contain"
+        />
+      </div>
+      <div
+        class="absolute top-[42%] left-[88%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300"
+      >
+        <Image
+          src={yupImg}
+          alt="Yup"
+          loading="eager"
+          class="h-6 w-auto object-contain"
         />
       </div>
 
       <div
-        class='absolute top-[45%] left-[15%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
+        class="absolute top-[45%] left-[15%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300"
+      >
         <Image
           src={indodanaImg}
-          alt='Indodana'
-          loading='eager'
-          class='h-6 w-auto object-contain'
+          alt="Indodana"
+          loading="eager"
+          class="h-6 w-auto object-contain"
         />
       </div>
 
       <div
-        class='absolute top-[60%] left-[85%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
+        class="absolute top-[60%] left-[85%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300"
+      >
         <Image
           src={gopayImg}
-          alt='Gopaylater'
-          loading='eager'
-          class='h-6 w-auto object-contain'
+          alt="Gopaylater"
+          loading="eager"
+          class="h-6 w-auto object-contain"
         />
       </div>
 
       <div
-        class='absolute top-[78%] left-[35%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300'>
+        class="absolute top-[78%] left-[35%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] py-2.5 px-4 z-20 hover:scale-105 transition-transform duration-300"
+      >
         <Image
           src={blibliImg}
-          alt='Blibli Tiket Paylater'
-          loading='eager'
-          class='h-6 w-auto object-contain'
+          alt="Blibli Tiket Paylater"
+          loading="eager"
+          class="h-6 w-auto object-contain"
         />
       </div>
 
       <div
-        class='absolute top-[82%] left-[75%] -translate-x-1/2 -translate-y-1/2 bg-white border-[2.5px] border-primary/40 rounded-xl shadow-lg shadow-primary/10 py-3 px-5 z-30 flex items-center gap-3 animate-bounce'>
+        class="absolute top-[82%] left-[75%] -translate-x-1/2 -translate-y-1/2 bg-white border-[2.5px] border-primary/40 rounded-xl shadow-lg shadow-primary/10 py-3 px-5 z-30 flex items-center gap-3 animate-bounce"
+      >
         <div
-          class='w-8 h-8 rounded-full bg-secondary flex items-center justify-center shrink-0'>
+          class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center shrink-0"
+        >
           <svg
-            class='w-5 h-5 text-primary'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
+            class="w-5 h-5 text-primary"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
             ><path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='2.5'
-              d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
-            ></path></svg
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
           >
         </div>
-        <div class='flex flex-col'>
+        <div class="flex flex-col">
           <span
-            class='text-[9px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-1'
+            class="text-[9px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-1"
             >Kecepatan Proses</span
           >
-          <span class='text-tertiary font-black text-sm leading-none'
+          <span class="text-tertiary font-black text-sm leading-none"
             >5 - 10 Menit!</span
           >
         </div>
       </div>
 
       <div
-        class='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30'>
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
+      >
         <div
-          class='w-40 h-40 md:w-48 md:h-48 rounded-full bg-white border-[6px] border-white shadow-[0_15px_40px_rgba(2,43,84,0.15)] overflow-hidden flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300'>
+          class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-white border-[6px] border-white shadow-[0_15px_40px_rgba(2,43,84,0.15)] overflow-hidden flex items-center justify-center p-2 hover:scale-105 transition-transform duration-300"
+        >
           <Image
             src={logoImg}
-            alt='GestunByAisyah Logo'
-            class='w-full h-full object-contain rounded-full'
-            loading='eager'
+            alt="GestunByAisyah Logo"
+            class="w-full h-full object-contain rounded-full"
+            loading="eager"
           />
         </div>
       </div>

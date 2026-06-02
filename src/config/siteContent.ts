@@ -1,8 +1,8 @@
-import testimonial1 from '../assets/1.webp';
-import testimonial2 from '../assets/2.webp';
-import testimonial3 from '../assets/3.webp';
-import testimonial4 from '../assets/4.webp';
-import testimonial5 from '../assets/5.webp';
+import testimonial1 from '../assets/1.jpg';
+import testimonial2 from '../assets/2.jpg';
+import testimonial3 from '../assets/3.jpg';
+import testimonial4 from '../assets/4.jpg';
+import testimonial5 from '../assets/5.jpg';
 
 export const siteContent = {
   seo: {
@@ -42,6 +42,7 @@ export const siteContent = {
       'Akulaku',
       'Kredivo',
       'Indodana',
+      'Yup PayLater',
       'Kartu Kredit',
     ],
   },
@@ -105,6 +106,10 @@ export const siteContent = {
       {
         name: 'Gestun Kartu Kredit',
         desc: 'Untuk kebutuhan finansial lebih besar dengan support berbagai jenis kartu kredit melalui sistem gestun profesional.',
+      },
+      {
+        name: 'Gestun Yup Paylater',
+        desc: 'Layanan pencairan limit Yup PayLater secara cepat, aman, dan langsung ditransfer ke rekening bank atau e-wallet Anda.',
       },
     ],
   },
