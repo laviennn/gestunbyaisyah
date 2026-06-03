@@ -12,7 +12,7 @@ export const siteContent = {
     ogImage: '/assets/og-image.jpeg',
   },
   contact: {
-    phone: '6285787472094',
+    phone: '6288245462097',
     whatsappLink: 'https://wa.me/',
     defaultMessage:
       'Halo gestunbyaisyah, saya ingin gestun limit saya.',
